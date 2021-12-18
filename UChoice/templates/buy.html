@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% block index %}
+
+<div class="buy">
+  <div class="product">
+    <div class="name">
+      <h2>{{ phone }}</h2>
+    </div>
+    <img src="{{ img }}" alt="" />
+  </div>
+  <div class="DoProduct">
+    <h2>Оформление Заказа</h2>
+  </div>
+  <form action="{% url 'finish' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="Sur_Name" placeholder="Фамилия" required /> <br />
+    <input type="text" name="Firste_name" placeholder="Имя" required /><br />
+    <input type="text" name="Last_name" placeholder="Отчество" required /><br />
+    <input type="text" name="Adress" placeholder="Адрес" required /><br />
+    <input
+      type="tel"
+      name="Cridet_card"
+      placeholder="Номер Телефона"
+      maxlength="19"
+      autocomplete="cc-number"
+      required
+    /><br />
+    <input
+      type="date"
+      name="Day"
+      placeholder="Желаемый день доставки"
+      required
+    /><br />
+    <input type="hidden" name="Product" value="{{ phone }}" /><br />
+    <input type="hidden" name="Photo" value="{{ img }}" /><br />
+    <button type="submit">Заказать</button>
+  </form>
+  <span><strong>Цена: </strong>{{ price }}</span>
+</div>
+
+<style>
+  .buy {
+    width: 55%;
+    height: 601px;
+    float: right;
+    border: 1px solid black;
+    margin-right: 25%;
+    background-color: white;
+  }
+
+  .product {
+    width: 490px;
+    height: 600px;
+    border-right: 1px solid black;
+    text-align: center;
+    float: left;
+  }
+
+  .name {
+    width: 100%;
+    height: 35px;
+    float: left;
+  }
+
+  .DoProduct {
+    float: right;
+    height: 35px;
+    width: 46.11233%;
+    text-align: center;
+  }
+
+  form {
+    width: 46.11233%;
+    height: 500px;
+    float: right;
+    text-align: center;
+  }
+
+  input {
+    width: 60%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    padding-top: 50px;
+    outline: none;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 4px 11px;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 0px;
+    background-color: #0071e3;
+    color: white;
+  }
+
+  span {
+    float: right;
+    padding-right: 50px;
+    padding-top: 20px;
+  }
+</style>
+
+{% endblock %}

@@ -1,0 +1,137 @@
+{% load static %}
+
+<div class="Content">
+  <div class="List_product">
+    <div class="product_1">
+      <div class="info">
+        <h2>iPhone 13 Pro</h2>
+        <p>The ultimate iPhone.</p>
+      </div>
+      <img src="{% static './img/iphone-13-pro.png' %}" alt="" />
+      <div class="description">
+        <p>From $999</p>
+        <form action="{% url 'buy' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" value="iPhone 13 pro" name="phone" />
+          <input
+            type="hidden"
+            value="{% static './img/iphone-13-pro.png' %}"
+            name="img"
+          />
+          <input type="hidden" value="$999" name="price" />
+          <button type="submit">Buy</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="product_1">
+      <div class="info">
+        <h2>iPhone 13</h2>
+        <p>A total powerhouse.</p>
+      </div>
+      <img src="{% static './img/iphone-13.jfif' %}" alt="" />
+      <div class="description">
+        <p>From $699</p>
+        <form action="{% url 'buy' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" value="iPhone 13" name="phone" />
+          <input
+            type="hidden"
+            value="{% static './img/iphone-13.jfif' %}"
+            name="img"
+          />
+          <input type="hidden" value="$699" name="price" />
+          <button type="submit">Buy</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="product_1">
+      <div class="info">
+        <h2>iPhone 12</h2>
+        <p>As amazing as ever.</p>
+      </div>
+      <img src="{% static 'img/iphone-12.jfif' %}" alt="" />
+      <div class="description">
+        <p>From $599</p>
+        <form action="{% url 'buy' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" value="iPhone 12" name="phone" />
+          <input
+            type="hidden"
+            value="{% static 'img/iphone-12.jfif' %}"
+            name="img"
+          />
+          <input type="hidden" value="$599" name="price" />
+          <button type="submit">Buy</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="product_1">
+      <div class="info">
+        <h2>iPhone 11</h2>
+        <p>Lots to love.</p>
+      </div>
+      <img src="{% static 'img/iphone11.png' %}" alt="" />
+      <div class="description">
+        <p>From $549</p>
+        <form action="{% url 'buy' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" value="iPhone 11" name="phone" />
+          <input
+            type="hidden"
+            value="{% static 'img/iphone11.png' %}"
+            name="img"
+          />
+          <input type="hidden" value="$549" name="price" />
+          <button type="submit">Buy</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="product_1">
+      <div class="info">
+        <h2>iPhone SE</h2>
+        <p>Lots to love. Less to spend.</p>
+      </div>
+      <img src="{% static 'img/iphone-se.jfif' %}" alt="" />
+      <div class="description">
+        <p>From $399</p>
+        <form action="{% url 'buy' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" value="iPhone SE" name="phone" />
+          <input
+            type="hidden"
+            value="{% static 'img/iphone-se.jfif' %}"
+            name="img"
+          />
+          <input type="hidden" value="$399" name="price" />
+          <button type="submit">Buy</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="product_1">
+      <div class="info">
+        <h2>AirPods Max</h2>
+        <p>High-fidelity audoi.</p>
+      </div>
+      <img src="{% static 'img/airpods-max.png' %}" alt="" />
+      <div class="description">
+        <p>From $549</p>
+        <form action="{% url 'buy' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" value="AirPods Max" name="phone" />
+          <input
+            type="hidden"
+            value="{% static 'img/airpods-max.png' %}"
+            name="img"
+          />
+          <input type="hidden" value="From $549" name="price" />
+          <button type="submit">Buy</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
